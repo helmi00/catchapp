@@ -1,6 +1,6 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
-
+import * as globals from '../../global'
 @Component({
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
@@ -9,6 +9,7 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
+    // private connected: boolean;
 
     constructor(public location: Location, private element: ElementRef) {
         this.sidebarVisible = true;
@@ -17,6 +18,7 @@ export class NavbarComponent implements OnInit {
     ngOnInit() {
         const navbar: HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
+        globals.connected = true;
     }
     sidebarOpen() {
         const toggleButton = this.toggleButton;

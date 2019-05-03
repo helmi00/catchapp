@@ -38,32 +38,28 @@
               </li>
 
                 <!--pages demo-->
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/index">
+                <li class="nav-item" *ngIf="connected!==true">
+                    <a class="nav-link" routerLink="/login">
                         <p>Login</p>
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/index">
+                <li class="nav-item" *ngIf="connected == true">
+                    <a class="nav-link" routerLink="/map">
                         <p>Map</p>
                     </a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/index">
+                <li class="nav-item" *ngIf="connected == true">
+                    <a class="nav-link" routerLink="/chat">
                         <p>Chat</p>
                     </a>
                 </li>
 
                 <!--fin page demo-->
 
-                <li class="nav-item">
-                    <a class="nav-link" href="https://creativetimofficial.github.io/now-ui-kit-angular/documentation/tutorial" target="_blank">
-                      <p>Documentation</p>
-                    </a>
-                </li>
-                <li class="nav-item">
+
+                <li class="nav-item" *ngIf="connected == false">
                     <a class="nav-link btn btn-neutral" routerLink="/examples/login">
                         <i class="now-ui-icons gestures_tap-01"></i>
                         <p>  SignUp</p>
